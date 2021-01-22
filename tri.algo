@@ -1,0 +1,16 @@
+PROCEDURE procedure_tri(VAR tab : ARRAY_OF INTEGER)
+VAR
+    i , j , temp : INTEGER;
+BEGIN
+    j := 1;
+    WHILE (j<= tab.length-1) DO
+       i:=j-1
+       temp:=tab[j]
+       WHILE (i>=0 AND tab[i]>temp) DO
+           tab[i+1] := tab[i]
+           i:=i-1
+       END_WHILE
+       tab[i+1]:= temp
+       j:=j+1
+    END_WHILE
+END
